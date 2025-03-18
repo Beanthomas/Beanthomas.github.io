@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beans & Bandits - DayZ Survival Server</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">Beans & Bandits 🥫🏴‍☠️</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home 🏠</a></li>
+                <li><a href="#server">Server 🌐</a></li>
+                <li><a href="#survival">Survival 🧟</a></li>
+                <li><a href="#community">Community 🤝</a></li>
+                <li><a href="#rules">Rules 📜</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <button onclick="alert('Join our Discord to enter the fight!')" class="action-btn">Join the Fight ⚔️</button>
+            <span id="server-status" class="status-box">Loading... ⏳</span>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Survive the Chernarus Wasteland 🌲💀</h1>
+            <p>Welcome to <strong>Beans & Bandits</strong>, a Vanilla+ DayZ server where survival is an art. Face the unforgiving landscape of Chernarus, scavenge for scraps 🥫, and outwit both infected 🧟 and rival survivors 🏴‍☠️ in a world where <em>every decision counts</em>.</p>
+            <div class="hero-actions">
+                <span class="infected-warning">⚠️ Infected Spotted Nearby!</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Server Info Section -->
+    <section class="server-info" id="server">
+        <h2>Server Overview 🌍</h2>
+        <div class="server-grid">
+            <div class="server-card">
+                <h3>Vanilla+ Chernarus Experience 🎮</h3>
+                <p>Explore Chernarus, a 225 km² wasteland of <strong>eerie forests 🌳</strong>, deserted villages 🏚️, and decayed cities 🏙️. Our Vanilla+ DayZ server, with 50 slots, offers a refined survival challenge where every encounter tests your grit. Join a close-knit community that thrives on the edge of chaos.</p>
+            </div>
+            <div class="server-card">
+                <h3>Features & Connection 🔧</h3>
+                <p>Enjoy <strong>Enhanced Loot</strong> for thrilling scavenging 🎁 and <em>Base Tweaks</em> to secure your outpost 🏰 amidst the turmoil. Connect now: <code>IP: 192.168.1.1:2302</code></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Survival Guide Section -->
+    <section class="survival-guide" id="survival">
+        <h2>Survival Guide 🧭</h2>
+        <div class="survival-grid">
+            <div class="guide-card">
+                <h3>Mastering the Art of Staying Alive 🩺</h3>
+                <p class="rotating-text">Stay vigilant as night falls—danger hides in every shadow 🌙.</p>
+                <div class="guide-subsection">
+                    <h4>Food & Water 🍽️💧</h4>
+                    <p>Starvation and dehydration are silent killers. Check kitchens for <strong>canned goods 🥫</strong> or fruit 🍎, but beware—some might be spoiled 🤢. Rivers and wells offer water 💧; boil it with a campfire 🔥 or use purification tablets 💊. Fishing 🎣 by the coast can sustain you if you’ve got a rod and patience.</p>
+                </div>
+                <div class="guide-subsection">
+                    <h4>Combat Basics ⚔️</h4>
+                    <p>Fight only when necessary. Melee weapons like <em>axes 🪓</em> or shovels 🛠️ are quiet and reliable, but firearms 🔫 draw attention. Aim for the head against infected 🧟, and watch for bandits 🏴‍☠️. Ammo is scarce, so make every shot count 🎯. Practice <strong>stealth 🕵️‍♂️</strong>.</p>
+                </div>
+            </div>
+            <div class="guide-card map-preview">
+                <h3>Navigating Chernarus 🗺️</h3>
+                <p class="rotating-text">Scout inland ruins for hidden supplies and solitude 🏚️.</p>
+                <div class="guide-subsection">
+                    <h4>Key Locations 📍</h4>
+                    <p><strong>Chernogorsk 🌊</strong>: A bustling coastal city with hospitals 🏥 and apartments 🏢—high loot, higher risk. <em>Northwest Airfield ✈️</em>: Military gear galore 🎖️, but a bandit hotspot 🏴‍☠️. <strong>Berezino 🌲</strong>: Quieter eastern town with decent supplies 🥫. <em>Green Mountain 📡</em>: Eerie radio tower with rare finds.</p>
+                </div>
+                <div class="guide-subsection">
+                    <h4>Travel Tips 🏃‍♂️</h4>
+                    <p>Stick to <strong>tree lines 🌳</strong> for cover, avoiding open fields 🌾 where you’re a target 🎯. Roads are fast but exposed—use sparingly 🛤️. A <em>compass 🧭</em> or map 🗺️ can save you; otherwise, track the sun ☀️. Move at dawn 🌅 for visibility.</p>
+                </div>
+            </div>
+        </div>
+        <div class="survival-tips">
+            <h3>Pro Tips for the Wasteland 🌩️</h3>
+            <ul>
+                <li><strong>Layer up 👕</strong>—hypothermia hits fast in rain 🌧️.</li>
+                <li><em>Stash gear 🎒</em>—bases get raided 🏴‍☠️.</li>
+                <li>Craft a <strong>splint 🩹</strong> with sticks 🌿 and rags 👗.</li>
+                <li>Listen for <em>sounds 🔊</em>—gunshots 🔫 mean trouble.</li>
+                <li>Trade with <strong>survivors 🤝</strong>—beans 🥫 for bullets 🔴.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="community" id="community">
+        <h2>Join the Beans & Bandits Crew 🤝</h2>
+        <div class="community-content">
+            <p>Survival is better with allies. Our <strong>Discord community</strong> is where tales of daring raids ⚔️ and narrow escapes 🏃‍♂️ come alive. Connect with fellow survivors 👥, trade <em>strategies 📝</em>, and plan your next move against the wasteland’s dangers 🌩️. Whether you’re a lone wolf 🐺 or a squad leader 👑, there’s a place for you among the <strong>Beans & Bandits crew</strong>.</p>
+            <a href="https://discord.gg/gtFHXP39N9" target="_blank" class="discord-btn">Join Discord 🎙️</a>
+        </div>
+    </section>
+
+    <!-- Rules Section -->
+    <section class="rules" id="rules">
+        <h2>Wasteland Laws 📜</h2>
+        <div class="rules-grid">
+            <ul>
+                <li><strong>Respect all survivors</strong>—no griefing or unnecessary hostility 🤝</li>
+                <li><em>No hacks or exploits</em>—keep the fight fair and skill-based ⚖️</li>
+            </ul>
+            <ul>
+                <li><strong>No spam or server ads</strong>—focus on the survival experience 🚫</li>
+                <li>Follow <em>Discord and in-game rules</em> to maintain our community’s spirit 🌟</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 <strong>Beans & Bandits</strong> 🥫🏴‍☠️. Survive or perish in the unforgiving wastes of Chernarus.</p>
+        <div class="socials">
+            <a href="#"><i class="fab fa-discord"></i> 🎙️</a>
+            <a href="#"><i class="fab fa-twitter"></i> 🐦</a>
+            <a href="#"><i class="fab fa-youtube"></i> 🎥</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

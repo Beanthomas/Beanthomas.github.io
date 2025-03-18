@@ -1,0 +1,370 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1e2a2f 0%, #2c3e50 100%);
+    color: #e0e0e0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(44, 62, 80, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    font-size: 36px;
+    font-weight: 700;
+    color: #e0e0e0;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: #e74c3c;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+
+nav ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #e74c3c;
+}
+
+.header-actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.action-btn, .status-box {
+    padding: 12px 28px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+
+.action-btn {
+    background: #e74c3c;
+    border: none;
+    color: #fff;
+}
+
+.action-btn:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+
+.status-box {
+    background: rgba(39, 174, 96, 0.9); /* Default green for active */
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.status-box.maintenance {
+    background: rgba(231, 76, 60, 0.9); /* Red for maintenance */
+}
+
+.status-box.loading {
+    background: rgba(149, 165, 166, 0.9); /* Gray for loading */
+}
+
+.hero {
+    padding: 120px 40px;
+    background: linear-gradient(to bottom, #2c3e50, #1e2a2f);
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 72px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+    letter-spacing: 1px;
+}
+
+.hero p {
+    font-size: 24px;
+    font-weight: 300;
+    max-width: 900px;
+    margin: 0 auto 35px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.infected-warning {
+    font-size: 22px;
+    color: #e74c3c;
+    font-weight: 400;
+    animation: fadeIn 2s infinite;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.server-info, .survival-guide, .community, .rules {
+    padding: 80px 40px;
+    background: rgba(30, 42, 47, 0.95);
+    border-radius: 15px;
+    margin: 30px auto;
+    max-width: 1200px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.server-info h2, .survival-guide h2, .community h2, .rules h2 {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 35px;
+    color: #e0e0e0;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+}
+
+.server-grid, .survival-grid, .rules-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+.server-card {
+    background: #2c3e50;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
+    min-height: 300px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.server-card h3 {
+    font-size: 28px;
+    font-weight: 500;
+    color: #e74c3c;
+    text-align: left;
+    margin-bottom: 20px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.server-card p {
+    font-size: 18px;
+    font-weight: 400;
+    text-align: left;
+    margin-bottom: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.server-card code {
+    background: rgba(44, 62, 80, 0.7);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #fff;
+}
+
+.guide-card {
+    background: #2c3e50;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
+    height: 650px;
+    display: grid;
+    grid-template-rows: auto 40px auto auto;
+    grid-template-areas:
+        "header"
+        "rotating"
+        "sub1"
+        "sub2";
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.guide-card h3 {
+    font-size: 28px;
+    font-weight: 500;
+    color: #e74c3c;
+    text-align: left;
+    margin-bottom: 20px;
+    grid-area: header;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.guide-card p {
+    font-size: 18px;
+    font-weight: 400;
+    text-align: left;
+    margin-bottom: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.guide-card .rotating-text {
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    grid-area: rotating;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.guide-subsection {
+    padding: 20px;
+    background: rgba(44, 62, 80, 0.5);
+    border-radius: 8px;
+    border-left: 4px solid #e74c3c;
+    height: 230px;
+    margin-bottom: 20px;
+    text-align: left;
+    overflow: hidden;
+    display: grid;
+    align-content: end;
+    justify-items: start;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.guide-subsection h4 {
+    font-size: 22px;
+    font-weight: 500;
+    color: #e0e0e0;
+    margin-bottom: 15px;
+    text-align: left;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.guide-subsection p {
+    font-size: 16px;
+    color: #d0d0d0;
+    margin: 0;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.survival-tips {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.survival-tips h3 {
+    font-size: 28px;
+    font-weight: 500;
+    color: #e74c3c;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.survival-tips ul {
+    list-style: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.survival-tips ul li {
+    font-size: 18px;
+    padding: 15px;
+    margin: 10px 0;
+    background: rgba(44, 62, 80, 0.7);
+    border-radius: 8px;
+    transition: background 0.3s ease;
+    text-align: left;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.survival-tips ul li:hover {
+    background: rgba(44, 62, 80, 0.9);
+}
+
+.community {
+    text-align: center;
+}
+
+.community-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.community p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.community .discord-btn {
+    display: inline-block;
+    padding: 14px 35px;
+    background: #7289da;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 20px;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.community .
