@@ -14,6 +14,7 @@ function updateTime() {
         font-weight: 500;
         z-index: 1000;
         transition: opacity 0.3s ease;
+        font-family: 'Roboto', sans-serif;
     `;
     document.body.appendChild(timeElement);
 
@@ -32,17 +33,24 @@ updateTime();
 // Server status
 function updateServerStatus() {
     const status = document.getElementById('server-status');
+    const isOnline = Math.random() > 0.2;
+    status.textContent = isOnline ? '  ONLINE ✅  ' : 'MAINTENANCE 🚧';
+    status.className = `status-box ${isOnline ? '' : 'maintenance'}`;
+    status.style.color = isOnline ? '#FFFFFF' : '#FFFFFF';
+    status.style.transition = 'color 0.5s ease';
+
     setInterval(() => {
         const isOnline = Math.random() > 0.2;
-        status.textContent = isOnline ? 'Active ✅' : 'Maintenance 🚧';
-        status.style.color = isOnline ? '#27ae60' : '#e74c3c';
+        status.textContent = isOnline ? '  ONLINE ✅  ' : 'MAINTENANCE 🚧';
+        status.className = `status-box ${isOnline ? '' : 'maintenance'}`;
+        status.style.color = isOnline ? '#FFFFFF' : '#FFFFFF';
         status.style.transition = 'color 0.5s ease';
     }, 8000);
 }
 
 updateServerStatus();
 
-// Survival tip rotator (for both Staying Alive and Navigating Chernarus)
+// Survival tip rotator
 const survivalTips = [
     "Search quiet towns for vital supplies to endure the harsh days ahead 🏘️.",
     "Stay vigilant as night falls—danger hides in every shadow 🌙.",
@@ -60,10 +68,9 @@ const navigationTips = [
 let survivalTipIndex = 0;
 let navigationTipIndex = 0;
 const survivalGuideCard = document.querySelector('.guide-card p');
-const navigationGuideCard = document.querySelector('.navigation-text');
+const navigationGuideCard = document.querySelector('.guide-card.map-preview p');
 
 function rotateTip() {
-    // Rotate survival tips
     survivalGuideCard.style.opacity = 0;
     setTimeout(() => {
         survivalGuideCard.textContent = survivalTips[survivalTipIndex];
@@ -71,7 +78,6 @@ function rotateTip() {
     }, 300);
     survivalTipIndex = (survivalTipIndex + 1) % survivalTips.length;
 
-    // Rotate navigation tips
     navigationGuideCard.style.opacity = 0;
     setTimeout(() => {
         navigationGuideCard.textContent = navigationTips[navigationTipIndex];
