@@ -4,21 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beans & Bandits - DayZ Survival Server</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    
+    <!-- Preload Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap" as="style">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500;700&family=Oswald:wght@400;500;600&display=swap">
 </head>
 <body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">Loading Chernarus...</div>
+    </div>
+
     <!-- Header -->
     <header>
-        <div class="logo">Beans & Bandits </div>
+        <div class="logo">Beans & Bandits</div>
         <nav>
             <ul>
-                <li><a href="#home">Home 🏠</a></li>
-                <li><a href="#server">Server 🌐</a></li>
-                <li><a href="#survival">Survival 🧟</a></li>
-                <li><a href="#community">Community 🤝</a></li>
-                <li><a href="#rules">Rules 📜</a></li>
+                <li><a href="#home" class="nav-link">Home 🏠</a></li>
+                <li><a href="#server" class="nav-link">Server 🌐</a></li>
+                <li><a href="#survival" class="nav-link">Survival 🧟</a></li>
+                <li><a href="#community" class="nav-link">Community 🤝</a></li>
+                <li><a href="#rules" class="nav-link">Rules 📜</a></li>
             </ul>
         </nav>
         <div class="header-actions">
@@ -31,7 +44,7 @@
     <section class="hero" id="home">
         <div class="hero-banner">
             <div class="hero-content">
-                <h1>Survive the Chernarus Wasteland </h1>
+                <h1>Survive the Chernarus Wasteland</h1>
                 <p>Welcome to <strong>Beans & Bandits</strong>, a Vanilla+ DayZ server where survival is an art. Face the unforgiving landscape of Chernarus, scavenge for scraps 🥫, and outwit both infected 🧟 and rival survivors 🏴‍☠️ in a world where <em>every decision counts</em>.</p>
                 <div class="hero-actions">
                     <span class="infected-warning">⚠️ Infected Spotted Nearby! ⚠️</span>
@@ -50,35 +63,39 @@
             </div>
             <div class="server-card">
                 <h3>Features & Connection 🔧</h3>
-                <p>Enjoy <strong>Enhanced Loot</strong> for thrilling scavenging 🎁 and <em>Base Tweaks</em> to secure your outpost 🏰 amidst the turmoil. Connect now: <code>IP: 192.168.1.1:2302</code></p>
+                <p>Enjoy <strong>Enhanced Loot</strong> for thrilling scavenging 🎁 and <em>Base Tweaks</em> to secure your outpost 🏰 amidst the turmoil.</p>
+                <div class="connection-info">
+                    <span class="ip-display">IP: 193.25.252.66:3102</span>
+                    <button class="copy-btn" onclick="copyIP()">Copy IP 📋</button>
+                </div>
             </div>
             <div class="server-card mods-card">
                 <h3>Mods for Vanilla+ 🔩</h3>
                 <div class="mod-list">
-                    <div class="mod-box">
+                    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1559212036&searchtext=community+framework" target="_blank" class="mod-box">
                         <h4>CF ⚙️</h4>
                         <p>Community Framework provides essential tweaks and tools for a seamless Vanilla+ experience.</p>
-                    </div>
-                    <div class="mod-box">
+                    </a>
+                    <a href="https://steamcommunity.com/workshop/filedetails/?id=1646187754" target="_blank" class="mod-box">
                         <h4>Code Lock 🔒</h4>
                         <p>Secure your base with coded locks, adding safety to your hard-earned outposts.</p>
-                    </div>
-                    <div class="mod-box">
+                    </a>
+                    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1590841260" target="_blank" class="mod-box">
                         <h4>Trader 💰</h4>
                         <p>Trade with NPCs at hubs, turning scavenged goods into valuable resources.</p>
-                    </div>
-                    <div class="mod-box">
+                    </a>
+                    <a href="https://steamcommunity.com/workshop/filedetails/?id=2116151222" target="_blank" class="mod-box">
                         <h4>DayZ Expansion 🎯</h4>
                         <p>Enhances loot, mechanics, and gameplay for a richer survival challenge.</p>
-                    </div>
-                    <div class="mod-box">
+                    </a>
+                    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1828439124" target="_blank" class="mod-box">
                         <h4>VPP Admin Tools 👨‍💻</h4>
                         <p>Powerful admin tools to manage the server, ensuring a fair and smooth wasteland experience.</p>
-                    </div>
-                    <div class="mod-box">
+                    </a>
+                    <a href="https://beansandbandits.com/custom-mod" target="_blank" class="mod-box">
                         <h4>Beans & Bandits Mod 🥫🏴‍☠️</h4>
                         <p>Our in-house developers’ creation, updating the map, adding new buildings, and refining items to enhance gameplay while staying true to the vanilla feel.</p>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -90,7 +107,6 @@
         <div class="survival-grid">
             <div class="guide-card">
                 <h3>Mastering the Art of Staying Alive 🩺</h3>
-                <p class="rotating-text">Stay vigilant as night falls—danger hides in every shadow 🌙.</p>
                 <div class="guide-subsection">
                     <h4>Food & Water 🍽️💧</h4>
                     <p>Starvation and dehydration are silent killers. Check kitchens for <strong>canned goods 🥫</strong> or fruit 🍎, but beware—some might be spoiled 🤢. Rivers and wells offer water 💧; boil it with a campfire 🔥 or use purification tablets 💊. Fishing 🎣 by the coast can sustain you if you’ve got a rod and patience.</p>
@@ -102,7 +118,6 @@
             </div>
             <div class="guide-card map-preview">
                 <h3>Navigating Chernarus 🗺️</h3>
-                <p class="rotating-text">Scout inland ruins for hidden supplies and solitude 🏚️.</p>
                 <div class="guide-subsection">
                     <h4>Key Locations 📍</h4>
                     <p><strong>Chernogorsk 🌊</strong>: A bustling coastal city with hospitals 🏥 and apartments 🏢—high loot, higher risk. <em>Northwest Airfield ✈️</em>: Military gear galore 🎖️, but a bandit hotspot 🏴‍☠️. <strong>Berezino 🌲</strong>: Quieter eastern town with decent supplies 🥫. <em>Green Mountain 📡</em>: Eerie radio tower with rare finds.</p>
@@ -127,7 +142,7 @@
 
     <!-- Community Section -->
     <section class="community" id="community">
-        <h2>Join the Beans & Bandits Crew 🤝</h2>
+        <h2>Join the Beans & Bandits Discord 🤝</h2>
         <div class="community-content">
             <p>Survival is better with allies. Our <strong>Discord community</strong> is where tales of daring raids ⚔️ and narrow escapes 🏃‍♂️ come alive. Connect with fellow survivors 👥, trade <em>strategies 📝</em>, and plan your next move against the wasteland’s dangers 🌩️. Whether you’re a lone wolf 🐺 or a squad leader 👑, there’s a place for you among the <strong>Beans & Bandits crew</strong>.</p>
             <a href="https://discord.gg/gtFHXP39N9" target="_blank" class="discord-btn">Join Discord 🎙️</a>
@@ -149,7 +164,7 @@
                 <li><em>Voice Chat Etiquette</em>—No screaming, loud noises, or voice changers in voice channels. Use push-to-talk if your mic is noisy 🎙️</li>
                 <li><strong>No Advertising</strong>—Don’t promote other servers, streams, or communities without mod permission. This is Beans’ turf! 🚫</li>
                 <li><em>Respect Privacy</em>—Don’t share personal info about yourself or others. No doxing—keep the apocalypse drama-free 🔒</li>
-                <li><strong>Follow Discord’s Rules</strong>—Stick to Discord’s Terms of Service and Community Guidelines. Beans & Bandits plays by the big rules too 📜</li>
+                <li><strong>Follow Discord’s Rules</strong>—Stick to Discord’s Terms of Service and Community Guidelines 📜</li>
                 <li><em>Report Issues</em>—See a rulebreaker? Ping a mod in #support. Don’t take justice into your own hands, bandit-style 👮</li>
             </ul>
         </div>
@@ -158,11 +173,10 @@
 
     <!-- Footer -->
     <footer>
+        <div class="footer-divider"></div>
         <p>© 2025 <strong>Beans & Bandits</strong> 🥫🏴‍☠️. Survive or perish in the unforgiving wastes of Chernarus.</p>
         <div class="socials">
             <a href="https://discord.gg/gtFHXP39N9"><i class="fab fa-discord"></i></a>
-            <!-- <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
-            <a href="https://youtube.com"><i class="fab fa-youtube"></i></a> -->
         </div>
     </footer>
 
