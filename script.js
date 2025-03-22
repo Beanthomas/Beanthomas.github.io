@@ -1,3 +1,19 @@
+// Preloader Fade-Out
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    preloader.classList.add('fade-out');
+    setTimeout(() => preloader.remove(), 2000);
+});
+
+// Optional: Wait for fonts to load before fading preloader (uncomment if needed)
+/*
+document.fonts.ready.then(() => {
+    const preloader = document.getElementById('preloader');
+    preloader.classList.add('fade-out');
+    setTimeout(() => preloader.remove(), 2000);
+});
+*/
+
 // Dynamic time display
 function updateTime() {
     const timeElement = document.createElement('div');
@@ -50,45 +66,6 @@ function updateServerStatus() {
 
 updateServerStatus();
 
-// Survival tip rotator
-const survivalTips = [
-    "Search quiet towns for vital supplies to endure the harsh days ahead 🏘️.",
-    "Stay vigilant as night falls—danger hides in every shadow 🌙.",
-    "Forge alliances to face the lawless threats roaming the land 🤝.",
-    "Gear up meticulously before venturing into the unpredictable wilds 🎒."
-];
-
-const navigationTips = [
-    "Explore Chernarus’ coastal towns for loot and danger 🌊.",
-    "Scout inland ruins for hidden supplies and solitude 🏚️.",
-    "Navigate by landmarks like factories and castles 🏭🏰.",
-    "Avoid roads at night to evade bandit ambushes 🌌."
-];
-
-let survivalTipIndex = 0;
-let navigationTipIndex = 0;
-const survivalGuideCard = document.querySelector('.guide-card p');
-const navigationGuideCard = document.querySelector('.guide-card.map-preview p');
-
-function rotateTip() {
-    survivalGuideCard.style.opacity = 0;
-    setTimeout(() => {
-        survivalGuideCard.textContent = survivalTips[survivalTipIndex];
-        survivalGuideCard.style.opacity = 1;
-    }, 300);
-    survivalTipIndex = (survivalTipIndex + 1) % survivalTips.length;
-
-    navigationGuideCard.style.opacity = 0;
-    setTimeout(() => {
-        navigationGuideCard.textContent = navigationTips[navigationTipIndex];
-        navigationGuideCard.style.opacity = 1;
-    }, 300);
-    navigationTipIndex = (navigationTipIndex + 1) % navigationTips.length;
-}
-
-setInterval(rotateTip, 7000);
-rotateTip();
-
 // Smooth scroll
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -97,3 +74,33 @@ document.querySelectorAll('nav a').forEach(anchor => {
         document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 });
+
+// Scroll-triggered animations for server cards
+function handleScrollAnimations() {
+    const cards = document.querySelectorAll('.server-card');
+    const triggerPoint = window.innerHeight * 0.8;
+
+    cards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
+        if (cardTop < triggerPoint) {
+            card.classList.add('visible');
+        }
+    });
+}
+
+window.addEventListener('scroll', handleScrollAnimations);
+handleScrollAnimations();
+
+// Copy IP function
+function copyIP() {
+    const ipText = "193.25.252.66:3102"; // Updated to match the displayed IP
+    navigator.clipboard.writeText(ipText).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        btn.textContent = "Copied! ✅";
+        setTimeout(() => {
+            btn.textContent = "Copy IP 📋";
+        }, 2000); // Revert after 2 seconds
+    }).catch(err => {
+        console.error('Failed to copy IP: ', err);
+    });
+}
